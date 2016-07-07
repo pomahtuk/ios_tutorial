@@ -16,10 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var photoImageView: UIImageView!
     
     // MARK: Actions
-    @IBAction func setDefaultLabelText(sender: UIButton) {
-        mealNameLabel.text = "Default Text"
-    }
-    
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
         // Hide the keyboard.
         nameTextField.resignFirstResponder()
@@ -28,10 +24,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 
         // Only allow photos to be picked, not taken.
         imagePickerController.sourceType = .PhotoLibrary
-        
+
         // Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
-        
+
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
@@ -61,7 +57,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         // Dismiss the picker.
         dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
     // MARK: lifecycle events
